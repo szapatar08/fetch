@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clima actual</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="min-h-screen bg-slate-950 px-4 py-10 text-slate-100">
+    <main class="mx-auto max-w-xl">
+      <header class="mb-8">
+        <p class="mb-2 text-sm font-semibold uppercase tracking-widest text-sky-400">
+          Ejercicio con Fetch
+        </p>
+        <h1 class="text-3xl font-bold tracking-tight">Clima actual</h1>
+        <p class="mt-3 text-slate-400">
+          Consulta el clima de una ciudad usando una API gratuita.
+        </p>
+      </header>
+
+      <form id="weather-form" class="rounded-2xl border border-slate-800 bg-slate-900 p-5 shadow-xl">
+        <label for="city" class="mb-2 block text-sm font-medium text-slate-300">
+          Ciudad
+        </label>
+        <div class="flex flex-col gap-3 sm:flex-row">
+          <input
+            id="city"
+            name="city"
+            type="text"
+            value="Medellín"
+            placeholder="Ej. Medellín"
+            class="min-w-0 flex-1 rounded-lg border border-slate-700 bg-slate-950 px-4 py-3 outline-none ring-sky-400 placeholder:text-slate-600 focus:ring-2"
+          />
+          <button
+            type="submit"
+            class="rounded-lg bg-sky-500 px-5 py-3 font-semibold text-slate-950 transition hover:bg-sky-400"
+          >
+            Consultar
+          </button>
+        </div>
+      </form>
+
+      <section id="status" class="mt-6 text-sm text-slate-400" aria-live="polite">
+        Escribe una ciudad y presiona “Consultar”.
+      </section>
+
+      <section id="weather-card" class="mt-4 hidden rounded-2xl border border-slate-800 bg-slate-900 p-6">
+        <div id="weather-result"></div>
+      </section>
+    </main>
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>
